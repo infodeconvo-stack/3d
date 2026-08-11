@@ -36,8 +36,7 @@ function MissingModel({ file }) {
 
 function App() {
   const [carId, setCarId] = useState(CAR_MODELS[0].id)
-  const [frontColor, setFrontColor] = useState(DEFAULT_COLOR)
-  const [rearColor, setRearColor] = useState(DEFAULT_COLOR)
+  const [color, setColor] = useState(DEFAULT_COLOR)
   const [fadeFinish, setFadeFinish] = useState(FADE_FINISHES[0].value)
 
   const car = useMemo(() => CAR_MODELS.find((c) => c.id === carId), [carId])
@@ -75,11 +74,9 @@ function App() {
             <Suspense fallback={<Loader />}>
               <CarModel
                 modelUrl={modelUrl(car.file)}
-                frontColor={frontColor}
-                rearColor={rearColor}
+                color={color}
                 fadeFinish={fadeFinish}
                 paintMaterialName={car.paintMaterial}
-                frontSign={car.frontSign}
                 onPartsDiscovered={handlePartsDiscovered}
                 position={carPosition}
               />
@@ -119,11 +116,8 @@ function App() {
         </aside>
 
         <div className="color-strip-wrap">
-          <span className="field-label">Choose Front Color</span>
-          <ColorStrip colors={ALL_COLORS} value={frontColor} onChange={setFrontColor} />
-
-          <span className="field-label">Choose Rear Color</span>
-          <ColorStrip colors={ALL_COLORS} value={rearColor} onChange={setRearColor} />
+          <span className="field-label">Select Your Color</span>
+          <ColorStrip colors={ALL_COLORS} value={color} onChange={setColor} />
         </div>
       </main>
     </div>
