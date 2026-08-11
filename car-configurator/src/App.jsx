@@ -105,15 +105,6 @@ function App() {
 
       <main className="control-bar">
         <aside className="control-sidebar">
-          <Dropdown label="Select Vehicle Type" options={CAR_TYPE_OPTIONS} value={carId} onChange={setCarId} />
-
-          <Dropdown label="Fade Finish" options={FADE_FINISHES} value={fadeFinish} onChange={setFadeFinish} />
-        </aside>
-
-        <div className="color-strip-wrap">
-          <span className="field-label">Select Your Color</span>
-          <ColorStrip colors={ALL_COLORS} value={color} onChange={setColor} />
-
           <div className="vehicle-details">
             <span className="vehicle-details-label">Vehicle Details</span>
             <div className="vehicle-details-grid">
@@ -149,6 +140,15 @@ function App() {
               </div>
             </div>
           </div>
+        </aside>
+
+        <div className="color-strip-wrap">
+          <span className="field-label">Select Your Color</span>
+          <ColorStrip colors={ALL_COLORS} value={color} onChange={setColor} />
+
+          <Dropdown label="Select Vehicle Type" options={CAR_TYPE_OPTIONS} value={carId} onChange={setCarId} />
+
+          <Dropdown label="Fade Finish" options={FADE_FINISHES} value={fadeFinish} onChange={setFadeFinish} />
 
           <button type="button" className="next-button" onClick={() => setShowCheckout(true)}>
             NEXT
