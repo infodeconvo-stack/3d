@@ -43,41 +43,6 @@
   border-right: 1px solid #e7e7ea;
 }
 
-.car-picker-vertical {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  overflow-y: auto;
-}
-
-.car-picker-vertical .car-pill {
-  width: 100%;
-  box-sizing: border-box;
-  text-align: left;
-}
-
-.car-pill {
-  padding: 7px 14px;
-  border-radius: 999px;
-  border: 1px solid #d8d9dd;
-  background: #ffffff;
-  color: #4a4d54;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: background 0.15s, border-color 0.15s, color 0.15s;
-}
-
-.car-pill:hover {
-  background: #f2f2f4;
-}
-
-.car-pill.active {
-  background: #1a1b1e;
-  border-color: #1a1b1e;
-  color: #fff;
-  font-weight: 600;
-}
-
 .color-strip-wrap {
   flex: 1;
   min-width: 0;

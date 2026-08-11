@@ -13,6 +13,7 @@ import { ROOM, ROOM_FLOOR_Y } from './data/room'
 import './App.css'
 
 const DEFAULT_COLOR = ALL_COLORS.find((c) => c.label === 'Reds 7').value
+const CAR_TYPE_OPTIONS = CAR_MODELS.map((c) => ({ value: c.id, label: c.label }))
 
 function Loader() {
   return (
@@ -102,18 +103,7 @@ function App() {
 
       <main className="control-bar">
         <aside className="control-sidebar">
-          <div className="car-picker-vertical">
-            {CAR_MODELS.map((c) => (
-              <button
-                key={c.id}
-                type="button"
-                className={`car-pill${c.id === carId ? ' active' : ''}`}
-                onClick={() => setCarId(c.id)}
-              >
-                {c.label}
-              </button>
-            ))}
-          </div>
+          <Dropdown label="Select Vehicle Type" options={CAR_TYPE_OPTIONS} value={carId} onChange={setCarId} />
 
           <Dropdown label="Fade Finish" options={FADE_FINISHES} value={fadeFinish} onChange={setFadeFinish} />
         </aside>
