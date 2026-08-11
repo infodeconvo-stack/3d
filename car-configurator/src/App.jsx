@@ -38,6 +38,9 @@ function App() {
   const [carId, setCarId] = useState(CAR_MODELS[0].id)
   const [color, setColor] = useState(DEFAULT_COLOR)
   const [fadeFinish, setFadeFinish] = useState(FADE_FINISHES[0].value)
+  const [year, setYear] = useState('')
+  const [make, setMake] = useState('')
+  const [model, setModel] = useState('')
 
   const car = useMemo(() => CAR_MODELS.find((c) => c.id === carId), [carId])
   const carPosition = useMemo(() => [0, ROOM_FLOOR_Y - car.groundOffset, 0], [car])
@@ -118,6 +121,42 @@ function App() {
         <div className="color-strip-wrap">
           <span className="field-label">Select Your Color</span>
           <ColorStrip colors={ALL_COLORS} value={color} onChange={setColor} />
+
+          <div className="vehicle-details">
+            <span className="vehicle-details-label">Vehicle Details</span>
+            <div className="vehicle-details-grid">
+              <div className="field">
+                <label className="field-label">Year</label>
+                <input
+                  type="text"
+                  className="text-input"
+                  placeholder="e.g. 2021"
+                  value={year}
+                  onChange={(e) => setYear(e.target.value)}
+                />
+              </div>
+              <div className="field">
+                <label className="field-label">Make</label>
+                <input
+                  type="text"
+                  className="text-input"
+                  placeholder="e.g. Toyota"
+                  value={make}
+                  onChange={(e) => setMake(e.target.value)}
+                />
+              </div>
+              <div className="field">
+                <label className="field-label">Model</label>
+                <input
+                  type="text"
+                  className="text-input"
+                  placeholder="e.g. Camry"
+                  value={model}
+                  onChange={(e) => setModel(e.target.value)}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     </div>
