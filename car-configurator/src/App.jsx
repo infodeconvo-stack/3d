@@ -5,6 +5,7 @@ import CarModel from './components/CarModel'
 import RoomEnvironment from './components/RoomEnvironment'
 import Dropdown from './components/Dropdown'
 import ColorStrip from './components/ColorStrip'
+import CheckoutModal from './components/CheckoutModal'
 import ErrorBoundary from './components/ErrorBoundary'
 import { ALL_COLORS } from './data/colorCategories'
 import { CAR_MODELS, modelUrl } from './data/carModels'
@@ -42,6 +43,7 @@ function App() {
   const [year, setYear] = useState('')
   const [make, setMake] = useState('')
   const [model, setModel] = useState('')
+  const [showCheckout, setShowCheckout] = useState(false)
 
   const car = useMemo(() => CAR_MODELS.find((c) => c.id === carId), [carId])
   const carPosition = useMemo(() => [0, ROOM_FLOOR_Y - car.groundOffset, 0], [car])
@@ -147,8 +149,14 @@ function App() {
               </div>
             </div>
           </div>
+
+          <button type="button" className="next-button" onClick={() => setShowCheckout(true)}>
+            NEXT
+          </button>
         </div>
       </main>
+
+      {showCheckout && <CheckoutModal onClose={() => setShowCheckout(false)} />}
     </div>
   )
 }

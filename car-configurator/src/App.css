@@ -157,6 +157,31 @@
   margin-bottom: 0;
 }
 
+.next-button {
+  width: 100%;
+  padding: 13px;
+  margin-top: 12px;
+  background: #1a1b1e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.next-button:hover {
+  background: #35363a;
+}
+
+@media (max-width: 600px) {
+  .vehicle-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .dropdown {
   position: relative;
 }
@@ -294,4 +319,105 @@
   background: rgba(0, 0, 0, 0.6);
   padding: 8px 14px;
   border-radius: 8px;
+}
+
+.quantity-stepper {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #d8d9dd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.quantity-stepper button {
+  width: 34px;
+  height: 34px;
+  background: #f7f7f8;
+  border: none;
+  color: #1a1b1e;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.quantity-stepper button:hover {
+  background: #ebebee;
+}
+
+.quantity-stepper span {
+  width: 40px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #1a1b1e;
+}
+
+.shipping-note {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: #8a8d94;
+  margin: 4px 0 16px;
+  line-height: 1.4;
+}
+
+.add-to-cart {
+  width: 100%;
+  padding: 13px;
+  background: #1a1b1e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.add-to-cart:hover {
+  background: #35363a;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #ffffff;
+  color: #1a1b1e;
+  border-radius: 16px;
+  padding: 32px 24px 24px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: #f2f2f4;
+  color: #4a4d54;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  background: #ebebee;
 }
