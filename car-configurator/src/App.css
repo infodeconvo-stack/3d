@@ -23,8 +23,6 @@
   position: relative;
   z-index: 1;
   flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
   max-height: 60vh;
   overflow-y: auto;
   width: 100%;
@@ -32,6 +30,14 @@
   background: #ffffff;
   color: #1a1b1e;
   box-sizing: border-box;
+}
+
+.control-bar-inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
 }
 
 .color-strip {
@@ -208,7 +214,7 @@
 
 .dropdown-menu {
   position: absolute;
-  bottom: calc(100% + 4px);
+  top: calc(100% + 4px);
   left: 0;
   right: 0;
   z-index: 20;
