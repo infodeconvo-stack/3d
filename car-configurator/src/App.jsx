@@ -104,56 +104,52 @@ function App() {
       </div>
 
       <main className="control-bar">
-        <aside className="control-sidebar">
-          <div className="vehicle-details">
-            <span className="vehicle-details-label">Vehicle Details</span>
-            <div className="vehicle-details-grid">
-              <div className="field">
-                <label className="field-label">Year</label>
-                <input
-                  type="text"
-                  className="text-input"
-                  placeholder="e.g. 2021"
-                  value={year}
-                  onChange={(e) => setYear(e.target.value)}
-                />
-              </div>
-              <div className="field">
-                <label className="field-label">Make</label>
-                <input
-                  type="text"
-                  className="text-input"
-                  placeholder="e.g. Toyota"
-                  value={make}
-                  onChange={(e) => setMake(e.target.value)}
-                />
-              </div>
-              <div className="field">
-                <label className="field-label">Model</label>
-                <input
-                  type="text"
-                  className="text-input"
-                  placeholder="e.g. Camry"
-                  value={model}
-                  onChange={(e) => setModel(e.target.value)}
-                />
-              </div>
+        <Dropdown label="Select Vehicle Type" options={CAR_TYPE_OPTIONS} value={carId} onChange={setCarId} />
+
+        <Dropdown label="Fade Finish" options={FADE_FINISHES} value={fadeFinish} onChange={setFadeFinish} />
+
+        <span className="field-label">Select Your Color</span>
+        <ColorStrip colors={ALL_COLORS} value={color} onChange={setColor} />
+
+        <div className="vehicle-details">
+          <span className="vehicle-details-label">Vehicle Details</span>
+          <div className="vehicle-details-grid">
+            <div className="field">
+              <label className="field-label">Year</label>
+              <input
+                type="text"
+                className="text-input"
+                placeholder="e.g. 2021"
+                value={year}
+                onChange={(e) => setYear(e.target.value)}
+              />
+            </div>
+            <div className="field">
+              <label className="field-label">Make</label>
+              <input
+                type="text"
+                className="text-input"
+                placeholder="e.g. Toyota"
+                value={make}
+                onChange={(e) => setMake(e.target.value)}
+              />
+            </div>
+            <div className="field">
+              <label className="field-label">Model</label>
+              <input
+                type="text"
+                className="text-input"
+                placeholder="e.g. Camry"
+                value={model}
+                onChange={(e) => setModel(e.target.value)}
+              />
             </div>
           </div>
-        </aside>
-
-        <div className="color-strip-wrap">
-          <span className="field-label">Select Your Color</span>
-          <ColorStrip colors={ALL_COLORS} value={color} onChange={setColor} />
-
-          <Dropdown label="Select Vehicle Type" options={CAR_TYPE_OPTIONS} value={carId} onChange={setCarId} />
-
-          <Dropdown label="Fade Finish" options={FADE_FINISHES} value={fadeFinish} onChange={setFadeFinish} />
-
-          <button type="button" className="next-button" onClick={() => setShowCheckout(true)}>
-            NEXT
-          </button>
         </div>
+
+        <button type="button" className="next-button" onClick={() => setShowCheckout(true)}>
+          NEXT
+        </button>
       </main>
 
       {showCheckout && <CheckoutModal onClose={() => setShowCheckout(false)} />}

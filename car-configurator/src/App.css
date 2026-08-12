@@ -24,30 +24,14 @@
   z-index: 1;
   flex-shrink: 0;
   display: flex;
-  align-items: center;
-  gap: 22px;
+  flex-direction: column;
+  max-height: 60vh;
+  overflow-y: auto;
   width: 100%;
   padding: 18px 32px 22px;
   background: #ffffff;
   color: #1a1b1e;
   box-sizing: border-box;
-}
-
-.control-sidebar {
-  width: 320px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding-right: 18px;
-  border-right: 1px solid #e7e7ea;
-}
-
-.color-strip-wrap {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
 }
 
 .color-strip {
@@ -424,18 +408,7 @@
   }
 
   .control-bar {
-    flex-direction: column;
-    align-items: stretch;
     flex: 1;
-    min-height: 0;
-    overflow-y: auto;
-  }
-
-  .control-sidebar {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #e7e7ea;
-    padding-right: 0;
-    padding-bottom: 16px;
+    max-height: none;
   }
 }
